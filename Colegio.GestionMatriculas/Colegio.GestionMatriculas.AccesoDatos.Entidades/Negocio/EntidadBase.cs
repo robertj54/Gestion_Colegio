@@ -9,6 +9,15 @@ namespace Colegio.GestionMatriculas.Entidades.Negocio
     public class EntidadBase
     {
         /// <summary>
+        /// Identificador del registro, autoincremental
+        /// </summary>
+        public int Id { get; set; }
+        /// <summary>
+        /// 0 - Inactivo / 1 - Activo
+        /// </summary>
+        public bool Estado { get; set; } = true;
+
+        /// <summary>
         /// Fecha creación registro
         /// </summary>
         public DateOnly FechaCreacion { get; set; }

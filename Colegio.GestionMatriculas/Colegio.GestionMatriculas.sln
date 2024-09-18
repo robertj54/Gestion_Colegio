@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colegio.GestionMatriculas.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colegio.GestionMatriculas.Entidades", "Colegio.GestionMatriculas.AccesoDatos.Entidades\Colegio.GestionMatriculas.Entidades.csproj", "{6C1A8C64-2DF9-4189-AB09-65CFF0D40E7A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Capa Negocio", "03.Capa Negocio", "{9353F902-5319-41FF-BF2C-34F2635521F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colegio.GestionMatriculas.Repositorios", "Colegio.GestionMatriculas.Repositorios\Colegio.GestionMatriculas.Repositorios.csproj", "{15C7DB69-1644-4F16-9172-31513591A134}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{6C1A8C64-2DF9-4189-AB09-65CFF0D40E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C1A8C64-2DF9-4189-AB09-65CFF0D40E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6C1A8C64-2DF9-4189-AB09-65CFF0D40E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15C7DB69-1644-4F16-9172-31513591A134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15C7DB69-1644-4F16-9172-31513591A134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15C7DB69-1644-4F16-9172-31513591A134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15C7DB69-1644-4F16-9172-31513591A134}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{F38D0D33-845A-4BDF-8D9A-25AA7637A29A} = {47C459E8-94C5-4B70-9AEF-CF3827E3C381}
 		{AB953AD3-B915-4934-8F0B-0958966F941C} = {C8664AB4-9B27-473A-A2CE-674E48AD7AFB}
 		{6C1A8C64-2DF9-4189-AB09-65CFF0D40E7A} = {C8664AB4-9B27-473A-A2CE-674E48AD7AFB}
+		{15C7DB69-1644-4F16-9172-31513591A134} = {9353F902-5319-41FF-BF2C-34F2635521F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F76A0D8F-41C8-4083-8FC6-4E884FB3C846}
