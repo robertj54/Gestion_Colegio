@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using Colegio.GestionMatriculas.Entidades;
 using Microsoft.EntityFrameworkCore;
 
-namespace Colegio.GestionMatriculas.AccesoDatos.Datos;
+namespace Colegio.GestionMatriculas.AccesoDatos.Contexto;
 
 public partial class BdGestionColegioContext : DbContext
 {
@@ -39,7 +40,7 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblAlumno>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblAlumn__3214EC07FD692BEA");
+            entity.HasKey(e => e.Id).HasName("PK__tblAlumn__3214EC070F03C848");
 
             entity.ToTable("tblAlumno");
 
@@ -79,28 +80,33 @@ public partial class BdGestionColegioContext : DbContext
                 .HasComment("Usuario creación registro");
             entity.Property(e => e.UsuarioModificacion)
                 .HasMaxLength(50)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Usuario modificacion registro");
         });
 
         modelBuilder.Entity<TblCurso>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC0718CF988A");
+            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC071F74C501");
 
             entity.ToTable("tblCurso");
 
+            entity.Property(e => e.Id).HasComment("Id del curso");
             entity.Property(e => e.Descripcion)
                 .HasMaxLength(200)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Descripcion de curso");
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");
             entity.Property(e => e.FechaModificacion).HasComment("Fecha modificación registro");
             entity.Property(e => e.Nivel)
                 .HasMaxLength(50)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Nivel de instruccion");
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Nombre de curso");
             entity.Property(e => e.UsuarioCreacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -110,12 +116,14 @@ public partial class BdGestionColegioContext : DbContext
                 .HasMaxLength(50)
                 .IsUnicode(false)
                 .HasComment("Usuario modificación registro");
-            entity.Property(e => e.Vigente).HasDefaultValue(true);
+            entity.Property(e => e.Vigente)
+                .HasDefaultValue(true)
+                .HasComment("Estado de vigencia de curso - 0:Inactivo / 1:Activo");
         });
 
         modelBuilder.Entity<TblCursoDocente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC07EFDEC4B7");
+            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC07D813020A");
 
             entity.ToTable("tblCurso_Docente");
 
@@ -134,7 +142,7 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblCursoGradoSeccion>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC070ADA1E58");
+            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC07DBFC06FD");
 
             entity.ToTable("tblCurso_GradoSeccion");
 
@@ -154,35 +162,43 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblDocente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblDocen__3214EC07E2731678");
+            entity.HasKey(e => e.Id).HasName("PK__tblDocen__3214EC073A990114");
 
             entity.ToTable("tblDocente");
 
+            entity.Property(e => e.Id).HasComment("Id del docente");
             entity.Property(e => e.ApellidoMaterno)
                 .HasMaxLength(100)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Apellido materno del docente");
             entity.Property(e => e.ApellidoPaterno)
                 .HasMaxLength(100)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Apellido paterno del docente");
             entity.Property(e => e.Dni)
                 .HasMaxLength(8)
                 .IsUnicode(false)
                 .IsFixedLength()
+                .HasComment("nro de dni docente")
                 .HasColumnName("DNI");
             entity.Property(e => e.Especialidad)
                 .HasMaxLength(150)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Especialidad del docente");
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");
             entity.Property(e => e.FechaModificacion).HasComment("Fecha modificación registro");
+            entity.Property(e => e.FechaNacimiento).HasComment("Fecha de nacimiento del docente");
             entity.Property(e => e.Genero)
                 .HasMaxLength(1)
                 .IsUnicode(false)
-                .IsFixedLength();
+                .IsFixedLength()
+                .HasComment("Genero del docente -F:Femenino / M:Masculino");
             entity.Property(e => e.Nombres)
                 .HasMaxLength(150)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("nombres del docente");
             entity.Property(e => e.UsuarioCreacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -196,24 +212,28 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblGradoSeccion>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblGrado__3214EC0776BD1E52");
+            entity.HasKey(e => e.Id).HasName("PK__tblGrado__3214EC0736BDAA99");
 
             entity.ToTable("tblGradoSeccion");
 
+            entity.Property(e => e.Id).HasComment("Id del grado seccion");
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");
             entity.Property(e => e.FechaModificacion).HasComment("Fecha modificación registro");
             entity.Property(e => e.Grado)
                 .HasMaxLength(25)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Grado de estudio");
             entity.Property(e => e.Nivel)
                 .HasMaxLength(50)
-                .IsUnicode(false);
+                .IsUnicode(false)
+                .HasComment("Nivel de instruccion");
             entity.Property(e => e.Seccion)
                 .HasMaxLength(2)
                 .IsUnicode(false)
-                .IsFixedLength();
+                .IsFixedLength()
+                .HasComment("Seccion del grado");
             entity.Property(e => e.UsuarioCreacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)
@@ -227,24 +247,30 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblMatricula>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblMatri__3214EC079B81593D");
+            entity.HasKey(e => e.Id).HasName("PK__tblMatri__3214EC07FE567B3D");
 
             entity.ToTable("tblMatricula");
 
+            entity.Property(e => e.Id).HasComment("Id de matricula");
             entity.Property(e => e.Codigo)
                 .HasMaxLength(10)
-                .IsFixedLength();
+                .IsFixedLength()
+                .HasComment("Codigo de matricula");
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");
             entity.Property(e => e.FechaMatricula)
                 .HasMaxLength(10)
                 .HasDefaultValueSql("(getdate())")
-                .IsFixedLength();
+                .IsFixedLength()
+                .HasComment("Fecha de matricula");
             entity.Property(e => e.FechaModificacion).HasComment("Fecha modificación registro");
+            entity.Property(e => e.IdAlumno).HasComment("Id de alumno");
+            entity.Property(e => e.IdGradoSeccion).HasComment("Id de grado seccion");
             entity.Property(e => e.Periodo)
                 .HasMaxLength(10)
-                .IsFixedLength();
+                .IsFixedLength()
+                .HasComment("Periodo de matricula");
             entity.Property(e => e.UsuarioCreacion)
                 .HasMaxLength(50)
                 .IsUnicode(false)

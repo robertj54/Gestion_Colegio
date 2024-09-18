@@ -49,3 +49,57 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'tblMatricula',
     @level2type = N'COLUMN',
     @level2name = N'UsuarioModificacion'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Codigo de matricula',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'Codigo'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Fecha de matricula',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'FechaMatricula'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Periodo de matricula',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'Periodo'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Id de alumno',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'IdAlumno'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Id de grado seccion',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'IdGradoSeccion'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Id de matricula',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'Id'

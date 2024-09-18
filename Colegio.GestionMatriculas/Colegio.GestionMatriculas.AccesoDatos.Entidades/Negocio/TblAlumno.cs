@@ -1,9 +1,10 @@
-﻿using System;
+﻿using Colegio.GestionMatriculas.Entidades.Negocio;
+using System;
 using System.Collections.Generic;
 
-namespace Colegio.GestionMatriculas.AccesoDatos.Datos;
+namespace Colegio.GestionMatriculas.Entidades;
 
-public partial class TblAlumno
+public partial class TblAlumno : EntidadBase
 {
     /// <summary>
     /// Id Alumno
@@ -39,23 +40,6 @@ public partial class TblAlumno
     /// Fecha nacimiento
     /// </summary>
     public DateOnly FechaNacimiento { get; set; }
-
-    /// <summary>
-    /// Fecha creación registro
-    /// </summary>
-    public DateOnly FechaCreacion { get; set; }
-
-    /// <summary>
-    /// Usuario creación registro
-    /// </summary>
-    public string UsuarioCreacion { get; set; } = null!;
-
-    /// <summary>
-    /// Fecha modificación registro
-    /// </summary>
-    public DateOnly? FechaModificacion { get; set; }
-
-    public string? UsuarioModificacion { get; set; }
 
     public virtual ICollection<TblMatricula> TblMatriculas { get; set; } = new List<TblMatricula>();
 }

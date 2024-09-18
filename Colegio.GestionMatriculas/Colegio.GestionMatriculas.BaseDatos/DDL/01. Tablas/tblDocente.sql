@@ -49,3 +49,75 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'tblDocente',
     @level2type = N'COLUMN',
     @level2name = N'UsuarioModificacion'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'nro de dni docente',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblDocente',
+    @level2type = N'COLUMN',
+    @level2name = N'DNI'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'nombres del docente',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblDocente',
+    @level2type = N'COLUMN',
+    @level2name = N'Nombres'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Apellido paterno del docente',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblDocente',
+    @level2type = N'COLUMN',
+    @level2name = N'ApellidoPaterno'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Apellido materno del docente',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblDocente',
+    @level2type = N'COLUMN',
+    @level2name = N'ApellidoMaterno'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Fecha de nacimiento del docente',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblDocente',
+    @level2type = N'COLUMN',
+    @level2name = N'FechaNacimiento'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Genero del docente -F:Femenino / M:Masculino',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblDocente',
+    @level2type = N'COLUMN',
+    @level2name = N'Genero'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Especialidad del docente',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblDocente',
+    @level2type = N'COLUMN',
+    @level2name = N'Especialidad'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Id del docente',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblDocente',
+    @level2type = N'COLUMN',
+    @level2name = N'Id'

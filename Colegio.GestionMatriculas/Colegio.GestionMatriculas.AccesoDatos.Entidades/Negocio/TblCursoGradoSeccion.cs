@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Colegio.GestionMatriculas.AccesoDatos.Datos;
+namespace Colegio.GestionMatriculas.Entidades;
 
 public partial class TblCursoGradoSeccion
 {

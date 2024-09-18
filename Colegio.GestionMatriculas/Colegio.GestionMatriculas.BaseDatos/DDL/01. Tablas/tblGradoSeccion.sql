@@ -45,3 +45,39 @@ EXEC sp_addextendedproperty @name = N'MS_Description',
     @level1name = N'tblGradoSeccion',
     @level2type = N'COLUMN',
     @level2name = N'UsuarioModificacion'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Grado de estudio',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblGradoSeccion',
+    @level2type = N'COLUMN',
+    @level2name = N'Grado'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Nivel de instruccion',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblGradoSeccion',
+    @level2type = N'COLUMN',
+    @level2name = N'Nivel'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Seccion del grado',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblGradoSeccion',
+    @level2type = N'COLUMN',
+    @level2name = N'Seccion'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Id del grado seccion',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblGradoSeccion',
+    @level2type = N'COLUMN',
+    @level2name = N'Id'

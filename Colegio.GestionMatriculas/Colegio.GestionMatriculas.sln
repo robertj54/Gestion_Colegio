@@ -11,7 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Capa Acceso Datos", "02
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colegio.GestionMatriculas.AccesoDatos", "Colegio.GestionMatriculas.AccesoDatos\Colegio.GestionMatriculas.AccesoDatos.csproj", "{AB953AD3-B915-4934-8F0B-0958966F941C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colegio.GestionMatriculas.AccesoDatos.Entidades", "Colegio.GestionMatriculas.AccesoDatos.Entidades\Colegio.GestionMatriculas.AccesoDatos.Entidades.csproj", "{6C1A8C64-2DF9-4189-AB09-65CFF0D40E7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Colegio.GestionMatriculas.Entidades", "Colegio.GestionMatriculas.AccesoDatos.Entidades\Colegio.GestionMatriculas.Entidades.csproj", "{6C1A8C64-2DF9-4189-AB09-65CFF0D40E7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
