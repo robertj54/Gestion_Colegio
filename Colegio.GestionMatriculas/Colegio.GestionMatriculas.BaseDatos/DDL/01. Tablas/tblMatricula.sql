@@ -13,3 +13,39 @@
     CONSTRAINT [FK_tblMatricula_tblAlumno] FOREIGN KEY([IdAlumno]) REFERENCES [dbo].[tblAlumno] ([Id]),
     CONSTRAINT [FK_tblMatricula_tblGradoSeccion] FOREIGN KEY([IdGradoSeccion]) REFERENCES [dbo].[tblGradoSeccion] ([Id])
 )
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Fecha creación registro',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'FechaCreacion'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Usuario creación registro',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'UsuarioCreacion'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Fecha modificación registro',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'FechaModificacion'
+GO
+EXEC sp_addextendedproperty @name = N'MS_Description',
+    @value = N'Usuario modificación registro',
+    @level0type = N'SCHEMA',
+    @level0name = N'dbo',
+    @level1type = N'TABLE',
+    @level1name = N'tblMatricula',
+    @level2type = N'COLUMN',
+    @level2name = N'UsuarioModificacion'
