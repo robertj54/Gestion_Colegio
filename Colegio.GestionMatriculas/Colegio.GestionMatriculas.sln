@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Base Datos", "01. Base Datos", "{47C459E8-94C5-4B70-9AEF-CF3827E3C381}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Colegio.Gestion_Matriculas.BaseDatos", "Colegio.Gestion_Matriculas.BaseDatos\Colegio.Gestion_Matriculas.BaseDatos.sqlproj", "{F38D0D33-845A-4BDF-8D9A-25AA7637A29A}"
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Colegio.GestionMatriculas.BaseDatos", "Colegio.GestionMatriculas.BaseDatos\Colegio.GestionMatriculas.BaseDatos.sqlproj", "{F38D0D33-845A-4BDF-8D9A-25AA7637A29A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

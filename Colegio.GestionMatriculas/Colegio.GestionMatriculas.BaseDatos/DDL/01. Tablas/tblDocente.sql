@@ -1,11 +1,12 @@
 ﻿CREATE TABLE [dbo].[tblDocente]
 (
-	[Id] INT NOT NULL PRIMARY KEY,
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
 	[DNI] CHAR(8) NOT NULL, 
     [Nombres] VARCHAR(150) NOT NULL, 
     [ApellidoPaterno] VARCHAR(100) NOT NULL, 
     [ApellidoMaterno] VARCHAR(100) NOT NULL, 
-    [FechaNacimiento] DATE NOT NULL, 
+    [FechaNacimiento] DATE NOT NULL,
+    [Genero] CHAR(1) NOT NULL,
     [Especialidad] VARCHAR(150) NOT NULL, 
     [FechaCreacion] DATE NOT NULL DEFAULT GETDATE(), 
     [UsuarioCreacion] VARCHAR(50) NOT NULL DEFAULT 'USUSQL', 

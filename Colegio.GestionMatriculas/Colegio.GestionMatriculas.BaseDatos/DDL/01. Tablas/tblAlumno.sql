@@ -5,6 +5,7 @@
     [Nombres] VARCHAR(150) NOT NULL, 
     [ApellidoPaterno] VARCHAR(100) NOT NULL, 
     [ApellidoMaterno] VARCHAR(100) NOT NULL, 
+    [Genero] CHAR(1) NOT NULL,
     [FechaNacimiento] DATE NOT NULL, 
     [FechaCreacion] DATE NOT NULL DEFAULT GETDATE(), 
     [UsuarioCreacion] VARCHAR(50) NOT NULL DEFAULT 'USUSQL', 
