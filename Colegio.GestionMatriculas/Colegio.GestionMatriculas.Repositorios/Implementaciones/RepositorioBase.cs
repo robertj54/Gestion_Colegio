@@ -1,6 +1,8 @@
 ﻿using Colegio.GestionMatriculas.AccesoDatos.Contexto;
 using Colegio.GestionMatriculas.Entidades.Negocio;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,35 +20,59 @@ namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
             Contexto = context;
         }
 
-        public Task<TEntity> AddAsync(TEntity entity)
+        public async Task<TEntity> AddAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            var resultado = await Contexto.Set<TEntity>().AddAsync(entity);
+            await Contexto.SaveChangesAsync();
+            return resultado.Entity;
         }
 
-        public Task<TEntity?> FindByIdAsync(int id)
+        public async Task<TEntity?> FindByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await Contexto.Set<TEntity>().FindAsync(id);
         }
 
-        public Task<ICollection<TEntity>> ListAsync()
+        public async Task<ICollection<TEntity>> ListAsync()
         {
-            return Contexto.Set<TEntity>()
+            return await Contexto.Set<TEntity>()
                 .Where(p=> p.Estado)
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public Task<ICollection<TEntity>> ListAsync(Expression<Func<TEntity, bool>> predicado)
+        public async Task<ICollection<TEntity>> ListAsync(Expression<Func<TEntity, bool>> predicado)
         {
-            throw new NotImplementedException();
+            return await Contexto.Set<TEntity>()
+                .Where(predicado)
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public Task<ICollection<TInfo>> ListAsync<TInfo>(Expression<Func<TEntity, bool>> predicado, Expression<Func<TEntity, TInfo>> selector)
+        public async Task<ICollection<TInfo>> ListAsync<TInfo>(Expression<Func<TEntity, bool>> predicado, Expression<Func<TEntity, TInfo>> selector)
         {
-            throw new NotImplementedException();
+            var resultado = await Contexto.Set<TEntity>()
+                .Where(predicado)
+                .AsNoTracking()
+                .Select(selector)
+                .ToListAsync();
+
+            return resultado;
         }
 
-        public Task<(ICollection<TInfo> Collection, int TotalRegistros)> ListAsync<TInfo, TKey>(Expression<Func<TEntity, bool>> predicado, Expression<Func<TEntity, TInfo>> selector, Expression<Func<TEntity, TKey>> orderBy, int pagina = 1, int filas = 5)
+        public async Task<(ICollection<TInfo> Collection, int TotalRegistros)> ListAsync<TInfo, TKey>(Expression<Func<TEntity, bool>> predicado, Expression<Func<TEntity, TInfo>> selector, Expression<Func<TEntity, TKey>> orderBy, int pagina = 1, int filas = 5)
         {
-            throw new NotImplementedException();
+            var resultado = await Contexto.Set<TEntity>()
+                .Where(predicado)
+                .AsNoTracking()
+                .OrderBy(orderBy)
+                .Skip((pagina-1) * filas)
+                .Take(filas)
+                .Select(selector)
+                .ToListAsync();
+
+            var total = resultado.Count();
+
+            return (resultado, total);
         }
     }
 }
