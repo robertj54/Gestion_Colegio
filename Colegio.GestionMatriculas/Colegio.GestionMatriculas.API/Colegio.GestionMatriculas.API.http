@@ -1,0 +1,6 @@
+@Colegio.GestionMatriculas.API_HostAddress = http://localhost:5294
+
+GET {{Colegio.GestionMatriculas.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

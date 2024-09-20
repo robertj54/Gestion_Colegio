@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Implementaciones\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Colegio.GestionMatriculas.Dto\Colegio.GestionMatriculas.Dto.csproj" />
+    <ProjectReference Include="..\Colegio.GestionMatriculas.Repositorios\Colegio.GestionMatriculas.Repositorios.csproj" />
   </ItemGroup>
 
 </Project>

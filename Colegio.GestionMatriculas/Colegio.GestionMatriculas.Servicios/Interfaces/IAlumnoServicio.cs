@@ -1,4 +1,5 @@
-﻿using Colegio.GestionMatriculas.Dto.Request.Alumno;
+﻿using Colegio.GestionMatriculas.Dto.Request;
+using Colegio.GestionMatriculas.Dto.Request.Alumno;
 using Colegio.GestionMatriculas.Dto.Response;
 using Colegio.GestionMatriculas.Dto.Response.Alumno;
 using System;
