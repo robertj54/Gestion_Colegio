@@ -35,7 +35,7 @@ namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
         public async Task<ICollection<TEntity>> ListAsync()
         {
             return await Contexto.Set<TEntity>()
-                .Where(p=> p.Estado)
+                .Where(p => p.Estado)
                 .AsNoTracking()
                 .ToListAsync();
         }
@@ -61,16 +61,21 @@ namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
 
         public async Task<(ICollection<TInfo> Collection, int TotalRegistros)> ListAsync<TInfo, TKey>(Expression<Func<TEntity, bool>> predicado, Expression<Func<TEntity, TInfo>> selector, Expression<Func<TEntity, TKey>> orderBy, int pagina = 1, int filas = 5)
         {
+
             var resultado = await Contexto.Set<TEntity>()
                 .Where(predicado)
                 .AsNoTracking()
                 .OrderBy(orderBy)
-                .Skip((pagina-1) * filas)
+                .Skip((pagina - 1) * filas)
                 .Take(filas)
                 .Select(selector)
                 .ToListAsync();
 
-            var total = resultado.Count();
+            var total = await Contexto.Set<TEntity>()
+                .Where(predicado)
+                .CountAsync();
+
+            //var total = resultado.Count();
 
             return (resultado, total);
         }

@@ -22,25 +22,35 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
         }
         public async Task<RespuestaPaginacionDto<AlumnoDtoResponse>> Listar(PaginacionDtoRequest request)
         {
-
             RespuestaPaginacionDto<AlumnoDtoResponse> respuesta = new();
             try
             {
-                var resultado = await _repositorio.ListAsync();
-
-                //respuesta.Data = resultado;
+                var resultado = await _repositorio.ListAsync(
+                    predicado: p => p.Estado == true,
+                    selector: p => new AlumnoDtoResponse
+                    {
+                        Id = p.Id,
+                        Dni = p.Dni,
+                        Nombres = p.Nombres,
+                        ApellidoPaterno = p.ApellidoPaterno,
+                        ApellidoMaterno = p.ApellidoMaterno,
+                        Genero = p.Genero,
+                        FechaNacimiento = p.FechaNacimiento
+                    },
+                    orderBy: p => p.Id,
+                    pagina: request.NumeroPagina,
+                    filas: request.TotalFilas);
+                respuesta.Data = resultado.Collection;
                 respuesta.success = true;
+                respuesta.TotalFilas = resultado.TotalRegistros;
+                respuesta.TotalPagina = (int)Math.Ceiling((double)resultado.TotalRegistros / request.TotalFilas);
                 return respuesta;
-
             }
             catch (Exception)
             {
 
                 throw;
             }
-            
-
-           
         }
 
         public Task<RespuestaBaseDto<AlumnoDtoResponse>> Registrar(AlumnoDtoRequest request)

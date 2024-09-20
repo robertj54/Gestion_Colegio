@@ -4,6 +4,7 @@
     [Grado] VARCHAR(25) NOT NULL, 
     [Nivel] VARCHAR(50) NOT NULL, 
     [Seccion] CHAR(2) NOT NULL,
+    [Estado] BIT NOT NULL DEFAULT 1, 
     [FechaCreacion] DATE NOT NULL DEFAULT GETDATE(), 
     [UsuarioCreacion] VARCHAR(50) NOT NULL DEFAULT 'USUSQL', 
     [FechaModificacion] DATE NULL, 

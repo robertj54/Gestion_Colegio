@@ -5,6 +5,7 @@
     [Descripcion] VARCHAR(200) NULL, 
     [Nivel] VARCHAR(50) NOT NULL, 
     [Vigente] BIT NULL DEFAULT 1,
+    [Estado] BIT NOT NULL DEFAULT 1, 
     [FechaCreacion] DATE NOT NULL DEFAULT GETDATE(), 
     [UsuarioCreacion] VARCHAR(50) NOT NULL DEFAULT 'USUSQL', 
     [FechaModificacion] DATE NULL, 

@@ -8,6 +8,7 @@
     [FechaNacimiento] DATE NOT NULL,
     [Genero] CHAR(1) NOT NULL,
     [Especialidad] VARCHAR(150) NOT NULL, 
+    [Estado] BIT NOT NULL DEFAULT 1, 
     [FechaCreacion] DATE NOT NULL DEFAULT GETDATE(), 
     [UsuarioCreacion] VARCHAR(50) NOT NULL DEFAULT 'USUSQL', 
     [FechaModificacion] DATE NULL, 

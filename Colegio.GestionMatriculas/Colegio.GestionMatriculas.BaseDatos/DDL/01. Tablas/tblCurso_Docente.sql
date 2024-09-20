@@ -3,6 +3,7 @@
 	[Id] INT NOT NULL PRIMARY KEY, 
     [IdCurso] INT NULL  , 
     [IdDocente] INT NULL ,
+    [Estado] BIT NOT NULL DEFAULT 1, 
     FOREIGN KEY([IdCurso]) REFERENCES [dbo].[tblCurso] ([Id]),
     FOREIGN KEY([IdDocente]) REFERENCES [dbo].[tblDocente] ([Id])
 )

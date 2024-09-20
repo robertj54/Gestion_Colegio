@@ -6,6 +6,7 @@
     [Periodo] NCHAR(10) NULL, 
     [IdAlumno] INT NOT NULL, 
     [IdGradoSeccion] INT NOT NULL,
+    [Estado] BIT NOT NULL DEFAULT 1, 
     [FechaCreacion] DATE NOT NULL DEFAULT GETDATE(), 
     [UsuarioCreacion] VARCHAR(50) NOT NULL DEFAULT 'USUSQL', 
     [FechaModificacion] DATE NULL, 
