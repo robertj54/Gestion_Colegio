@@ -42,5 +42,12 @@ namespace Colegio.GestionMatriculas.Dto.Response.Alumno
         /// Fecha nacimiento
         /// </summary>
         public DateOnly FechaNacimiento { get; set; }
+
+        public int Edad
+        {
+            get {
+                return DateTime.Now.Year - FechaNacimiento.Year;
+            }
+        }
     }
 }

@@ -16,7 +16,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<BdGestionColegioContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BdColegio"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("BdColegio1"));
 });
 
 builder.Services.AddScoped<IAlumnoRepositorio, AlumnoRepositorio>();

@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Contexto\EntidadBase.cs" />
+    <Compile Remove="Contexto\TblAlumno.cs" />
+    <Compile Remove="Contexto\TblCurso.cs" />
+    <Compile Remove="Contexto\TblCursoDocente.cs" />
+    <Compile Remove="Contexto\TblCursoGradoSeccion.cs" />
+    <Compile Remove="Contexto\TblDocente.cs" />
+    <Compile Remove="Contexto\TblGradoSeccion.cs" />
+    <Compile Remove="Contexto\TblMatricula.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.8">
       <PrivateAssets>all</PrivateAssets>

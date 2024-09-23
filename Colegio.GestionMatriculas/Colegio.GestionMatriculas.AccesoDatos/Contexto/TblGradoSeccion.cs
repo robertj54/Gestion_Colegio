@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Colegio.GestionMatriculas.Entidades;
+namespace Colegio.GestionMatriculas.AccesoDatos.Contexto;
 
-public partial class TblGradoSeccion : EntidadBase
+public partial class TblGradoSeccion
 {
     /// <summary>
     /// Id del grado seccion
@@ -24,6 +24,28 @@ public partial class TblGradoSeccion : EntidadBase
     /// Seccion del grado
     /// </summary>
     public string Seccion { get; set; } = null!;
+
+    public bool Estado { get; set; }
+
+    /// <summary>
+    /// Fecha creación registro
+    /// </summary>
+    public DateOnly FechaCreacion { get; set; }
+
+    /// <summary>
+    /// Usuario creación registro
+    /// </summary>
+    public string UsuarioCreacion { get; set; } = null!;
+
+    /// <summary>
+    /// Fecha modificación registro
+    /// </summary>
+    public DateOnly? FechaModificacion { get; set; }
+
+    /// <summary>
+    /// Usuario modificación registro
+    /// </summary>
+    public string? UsuarioModificacion { get; set; }
 
     public virtual ICollection<TblCursoGradoSeccion> TblCursoGradoSeccions { get; set; } = new List<TblCursoGradoSeccion>();
 

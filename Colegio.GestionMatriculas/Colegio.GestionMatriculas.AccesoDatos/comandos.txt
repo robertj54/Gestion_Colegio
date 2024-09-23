@@ -1,1 +1,1 @@
-﻿dotnet ef dbcontext scaffold "server=(local); database=BD_GestionColegio; integrated security=true; TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Contexto
+﻿dotnet ef dbcontext scaffold "server=(local); database=BDGestionColegio; integrated security=true; TrustServerCertificate=True" Microsoft.EntityFrameworkCore.SqlServer -o Contexto

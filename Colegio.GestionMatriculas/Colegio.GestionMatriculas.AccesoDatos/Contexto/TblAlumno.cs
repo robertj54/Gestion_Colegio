@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Colegio.GestionMatriculas.Entidades;
+namespace Colegio.GestionMatriculas.AccesoDatos.Contexto;
 
 public partial class TblAlumno : EntidadBase
 {
-    /// <summary>
-    /// Id Alumno
-    /// </summary>
-    public int Id { get; set; }
+
 
     /// <summary>
     /// DNI alumno
@@ -39,6 +36,9 @@ public partial class TblAlumno : EntidadBase
     /// Fecha nacimiento
     /// </summary>
     public DateOnly FechaNacimiento { get; set; }
+
+
+
 
     public virtual ICollection<TblMatricula> TblMatriculas { get; set; } = new List<TblMatricula>();
 }

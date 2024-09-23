@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Colegio.GestionMatriculas.AccesoDatos.Entidades\Colegio.GestionMatriculas.Entidades.csproj" />
     <ProjectReference Include="..\Colegio.GestionMatriculas.AccesoDatos\Colegio.GestionMatriculas.AccesoDatos.csproj" />
   </ItemGroup>
 

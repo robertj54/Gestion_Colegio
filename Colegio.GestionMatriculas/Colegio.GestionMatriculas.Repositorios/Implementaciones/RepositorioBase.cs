@@ -1,5 +1,5 @@
 ﻿using Colegio.GestionMatriculas.AccesoDatos.Contexto;
-using Colegio.GestionMatriculas.Entidades.Negocio;
+using Colegio.GestionMatriculas.Entidades;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;

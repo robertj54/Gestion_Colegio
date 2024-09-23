@@ -20,6 +20,7 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
         {
             _repositorio = repositorio;
         }
+
         public async Task<RespuestaPaginacionDto<AlumnoDtoResponse>> Listar(PaginacionDtoRequest request)
         {
             RespuestaPaginacionDto<AlumnoDtoResponse> respuesta = new();
@@ -46,7 +47,7 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
                 respuesta.TotalPagina = (int)Math.Ceiling((double)resultado.TotalRegistros / request.TotalFilas);
                 return respuesta;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;

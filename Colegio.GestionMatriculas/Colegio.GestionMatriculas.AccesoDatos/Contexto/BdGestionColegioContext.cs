@@ -36,9 +36,10 @@ public partial class BdGestionColegioContext : DbContext
     {
         modelBuilder.UseCollation("SQL_Latin1_General_CP1_CI_AS");
 
+
         modelBuilder.Entity<TblAlumno>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblAlumn__3214EC070F03C848");
+            entity.HasKey(e => e.Id).HasName("PK__tblAlumn__3214EC07097F0760");
 
             entity.ToTable("tblAlumno");
 
@@ -57,6 +58,7 @@ public partial class BdGestionColegioContext : DbContext
                 .IsFixedLength()
                 .HasComment("DNI alumno")
                 .HasColumnName("DNI");
+            entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");
@@ -84,7 +86,7 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblCurso>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC071F74C501");
+            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC07D20DE6C2");
 
             entity.ToTable("tblCurso");
 
@@ -93,6 +95,7 @@ public partial class BdGestionColegioContext : DbContext
                 .HasMaxLength(200)
                 .IsUnicode(false)
                 .HasComment("Descripcion de curso");
+            entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");
@@ -121,29 +124,31 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblCursoDocente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC07D813020A");
+            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC071F425DA9");
 
             entity.ToTable("tblCurso_Docente");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
+            //entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.IdCurso).HasComment("Id de curso");
             entity.Property(e => e.IdDocente).HasComment("Id de docente");
 
             entity.HasOne(d => d.IdCursoNavigation).WithMany(p => p.TblCursoDocentes)
                 .HasForeignKey(d => d.IdCurso)
-                .HasConstraintName("FK__tblCurso___IdCur__3B75D760");
+                .HasConstraintName("FK__tblCurso___IdCur__4222D4EF");
 
             entity.HasOne(d => d.IdDocenteNavigation).WithMany(p => p.TblCursoDocentes)
                 .HasForeignKey(d => d.IdDocente)
-                .HasConstraintName("FK__tblCurso___IdDoc__3C69FB99");
+                .HasConstraintName("FK__tblCurso___IdDoc__4316F928");
         });
 
         modelBuilder.Entity<TblCursoGradoSeccion>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC07DBFC06FD");
+            entity.HasKey(e => e.Id).HasName("PK__tblCurso__3214EC072F1AA5D0");
 
             entity.ToTable("tblCurso_GradoSeccion");
 
+            //entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.IdCurso).HasComment("Id de curso");
             entity.Property(e => e.IdGradoSeccion).HasComment("Id de grado seccion");
 
@@ -160,7 +165,7 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblDocente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblDocen__3214EC073A990114");
+            entity.HasKey(e => e.Id).HasName("PK__tblDocen__3214EC072EB3A1D0");
 
             entity.ToTable("tblDocente");
 
@@ -183,6 +188,7 @@ public partial class BdGestionColegioContext : DbContext
                 .HasMaxLength(150)
                 .IsUnicode(false)
                 .HasComment("Especialidad del docente");
+            entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");
@@ -210,11 +216,12 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblGradoSeccion>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblGrado__3214EC0736BDAA99");
+            entity.HasKey(e => e.Id).HasName("PK__tblGrado__3214EC07ABB364C7");
 
             entity.ToTable("tblGradoSeccion");
 
             entity.Property(e => e.Id).HasComment("Id del grado seccion");
+            entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");
@@ -245,7 +252,7 @@ public partial class BdGestionColegioContext : DbContext
 
         modelBuilder.Entity<TblMatricula>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__tblMatri__3214EC07FE567B3D");
+            entity.HasKey(e => e.Id).HasName("PK__tblMatri__3214EC078C71FB8B");
 
             entity.ToTable("tblMatricula");
 
@@ -254,6 +261,7 @@ public partial class BdGestionColegioContext : DbContext
                 .HasMaxLength(10)
                 .IsFixedLength()
                 .HasComment("Codigo de matricula");
+            entity.Property(e => e.Estado).HasDefaultValue(true);
             entity.Property(e => e.FechaCreacion)
                 .HasDefaultValueSql("(getdate())")
                 .HasComment("Fecha creación registro");

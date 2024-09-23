@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Colegio.GestionMatriculas.Entidades;
+namespace Colegio.GestionMatriculas.AccesoDatos.Contexto;
 
-public partial class TblMatricula : EntidadBase
+public partial class TblMatricula
 {
     /// <summary>
     /// Id de matricula
@@ -34,6 +34,28 @@ public partial class TblMatricula : EntidadBase
     /// Id de grado seccion
     /// </summary>
     public int IdGradoSeccion { get; set; }
+
+    public bool Estado { get; set; }
+
+    /// <summary>
+    /// Fecha creación registro
+    /// </summary>
+    public DateOnly FechaCreacion { get; set; }
+
+    /// <summary>
+    /// Usuario creación registro
+    /// </summary>
+    public string UsuarioCreacion { get; set; } = null!;
+
+    /// <summary>
+    /// Fecha modificación registro
+    /// </summary>
+    public DateOnly? FechaModificacion { get; set; }
+
+    /// <summary>
+    /// Usuario modificación registro
+    /// </summary>
+    public string? UsuarioModificacion { get; set; }
 
     public virtual TblAlumno IdAlumnoNavigation { get; set; } = null!;
 

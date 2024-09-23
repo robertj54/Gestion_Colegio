@@ -1,4 +1,6 @@
-﻿using Colegio.GestionMatriculas.Dto.Request;
+﻿using Azure.Core;
+using Colegio.GestionMatriculas.AccesoDatos.Contexto;
+using Colegio.GestionMatriculas.Dto.Request;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,14 +18,11 @@ namespace Colegio.GestionMatriculas.API.Controllers
             _servicio = servicio;
         }
 
-
-
         [HttpGet]
-        public IActionResult Get([FromQuery] PaginacionDtoRequest request)
+        public async Task<IActionResult> Get([FromQuery] PaginacionDtoRequest request)
         {
-            var resultado = _servicio.Listar(request);
-            return Ok(resultado);
-            //return resultado.success ? Ok(resultado) : BadRequest(resultado);
+            var resultado = await _servicio.Listar(request);
+            return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
             
     }

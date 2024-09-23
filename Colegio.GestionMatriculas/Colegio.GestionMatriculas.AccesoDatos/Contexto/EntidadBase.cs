@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Colegio.GestionMatriculas.Entidades
+
+namespace Colegio.GestionMatriculas.AccesoDatos.Contexto
 {
     public class EntidadBase
     {

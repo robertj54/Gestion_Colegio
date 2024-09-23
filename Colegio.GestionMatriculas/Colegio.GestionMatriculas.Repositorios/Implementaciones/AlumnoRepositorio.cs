@@ -1,6 +1,9 @@
 ﻿using Colegio.GestionMatriculas.AccesoDatos.Contexto;
 using Colegio.GestionMatriculas.Entidades;
+
+//using Colegio.GestionMatriculas.Entidades;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +14,11 @@ namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
 {
     public class AlumnoRepositorio : RepositorioBase<TblAlumno>, IAlumnoRepositorio
     {
-        private BdGestionColegioContext _bdGestionColegioContext;
+        private BdGestionColegioContext _contexto;
+
         public AlumnoRepositorio(BdGestionColegioContext context) : base(context)
         {
-            _bdGestionColegioContext = context;
+            _contexto = context;
         }
     }
 }
