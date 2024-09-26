@@ -1,6 +1,7 @@
 using Colegio.GestionMatriculas.AccesoDatos.Contexto;
 using Colegio.GestionMatriculas.Repositorios.Implementaciones;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
+using Colegio.GestionMatriculas.Servicios;
 using Colegio.GestionMatriculas.Servicios.Implementaciones;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -21,6 +22,8 @@ builder.Services.AddDbContext<BdGestionColegioContext>(options =>
 
 builder.Services.AddScoped<IAlumnoRepositorio, AlumnoRepositorio>();
 builder.Services.AddScoped<IAlumnoServicio, AlumnoServicio>();
+
+builder.Services.AddAutoMapper(config => ColeccionPerfilesMapperExtension.AddPerfilesMapper(config));
 
 var app = builder.Build();
 

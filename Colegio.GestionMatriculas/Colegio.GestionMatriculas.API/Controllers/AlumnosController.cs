@@ -24,6 +24,13 @@ namespace Colegio.GestionMatriculas.API.Controllers
             var resultado = await _servicio.Listar(request);
             return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
-            
+
+        [HttpGet("GetByDNI/{dni:int}")]
+        public async Task<IActionResult> Get(string dni)
+        {
+            var resultado = await _servicio.ObtenerPorDNI(dni);
+            return resultado.success ? Ok(resultado) : BadRequest(resultado);
+        }
+
     }
 }

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Colegio.GestionMatriculas.Dto\Colegio.GestionMatriculas.Dto.csproj" />
     <ProjectReference Include="..\Colegio.GestionMatriculas.Repositorios\Colegio.GestionMatriculas.Repositorios.csproj" />
   </ItemGroup>

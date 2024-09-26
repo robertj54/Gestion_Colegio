@@ -14,5 +14,6 @@ namespace Colegio.GestionMatriculas.Servicios.Interfaces
     {
         Task<RespuestaBaseDto<AlumnoDtoResponse>> Registrar(AlumnoDtoRequest request);
         Task<RespuestaPaginacionDto<AlumnoDtoResponse>> Listar(PaginacionDtoRequest request);
+        Task<RespuestaBaseDto<AlumnoDtoResponse>> ObtenerPorDNI(string dni);
     }
 }
