@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Servicios.Mapper
 {
-    public class AlumnoPerfil:Profile
+    public class AlumnoPerfil : Profile
     {
         public AlumnoPerfil()
         {

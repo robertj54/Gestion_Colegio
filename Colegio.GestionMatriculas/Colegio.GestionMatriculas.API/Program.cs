@@ -1,4 +1,5 @@
 using Colegio.GestionMatriculas.AccesoDatos.Contexto;
+using Colegio.GestionMatriculas.Repositorios;
 using Colegio.GestionMatriculas.Repositorios.Implementaciones;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Colegio.GestionMatriculas.Servicios;
@@ -20,8 +21,10 @@ builder.Services.AddDbContext<BdGestionColegioContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BdColegio1"));
 });
 
-builder.Services.AddScoped<IAlumnoRepositorio, AlumnoRepositorio>();
-builder.Services.AddScoped<IAlumnoServicio, AlumnoServicio>();
+
+builder.Services.AddRepositorios();
+builder.Services.AddServicios();
+
 
 builder.Services.AddAutoMapper(config => ColeccionPerfilesMapperExtension.AddPerfilesMapper(config));
 

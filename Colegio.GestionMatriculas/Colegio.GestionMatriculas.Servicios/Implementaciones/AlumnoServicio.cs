@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
+using Colegio.GestionMatriculas.Comun;
 using Colegio.GestionMatriculas.Dto.Request;
 using Colegio.GestionMatriculas.Dto.Request.Alumno;
 using Colegio.GestionMatriculas.Dto.Response;
 using Colegio.GestionMatriculas.Dto.Response.Alumno;
+using Colegio.GestionMatriculas.Entidades;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
 using System;
@@ -48,7 +50,7 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
                 respuesta.Data = resultado.Collection;
                 respuesta.success = true;
                 respuesta.TotalFilas = resultado.TotalRegistros;
-                respuesta.TotalPagina = (int)Math.Ceiling((double)resultado.TotalRegistros / request.TotalFilas);
+                respuesta.TotalPagina = Utils.CalcularTotalPaginas(resultado.TotalRegistros, request.TotalFilas);
                 return respuesta;
             }
             catch (Exception ex)
@@ -80,9 +82,23 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
             return respuesta;
         }
 
-        public Task<RespuestaBaseDto<AlumnoDtoResponse>> Registrar(AlumnoDtoRequest request)
+        public async Task<RespuestaBaseDto<AlumnoDtoResponse>> Registrar(AlumnoDtoRequest request)
         {
-            throw new NotImplementedException();
+            RespuestaBaseDto<AlumnoDtoResponse> respuesta = new();
+            try
+            {
+                var alumno = _mapper.Map<TblAlumno>(request);
+                var nuevo = await _repositorio.AddAsync(alumno);
+                respuesta.Data = _mapper.Map<AlumnoDtoResponse>(nuevo);
+                respuesta.success = true;
+                respuesta.message = "Cliente registrado exitosamente";
+                return respuesta;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Colegio.GestionMatriculas.Servicios
         public static IMapperConfigurationExpression AddPerfilesMapper(this IMapperConfigurationExpression config)
         {
             config.AddProfile<AlumnoPerfil>();
+            config.AddProfile<CursoPerfil>();
             return config;
         }
     }

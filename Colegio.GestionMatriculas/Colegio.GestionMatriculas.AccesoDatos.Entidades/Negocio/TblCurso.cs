@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Colegio.GestionMatriculas.Entidades;
 
-public partial class TblCurso : EntidadBase
+public class TblCurso : EntidadBase
 {
     /// <summary>
     /// Id del curso
