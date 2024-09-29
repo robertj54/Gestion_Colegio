@@ -1,4 +1,4 @@
-﻿version: '3.8'
+﻿# version: '3.8'
 services:
   postgres-db:
     image: postgres:latest
@@ -8,7 +8,7 @@ services:
         POSTGRES_DB: BdSeguridadPedidos
         POSTGRES_USER: usuario_admin
         POSTGRES_PASSWORD: password2024
-    volumes:
-        - C:/Users/juanc/OneDrive/Documentos/Docker/Volumenes/postgres_data:/var/lib/postgresql/data
+    # volumes:
+    #     - C:/Users/juanc/OneDrive/Documentos/Docker/Volumenes/postgres_data:/var/lib/postgresql/data
     ports:
     - "5432:5432"

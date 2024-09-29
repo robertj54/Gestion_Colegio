@@ -56,21 +56,27 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
-    <Folder Include="DML" />
-    <Folder Include="DDL" />
-    <Folder Include="DDL\01. Tablas" />
+    <Folder Include="MSSQLSERVER" />
+    <Folder Include="MSSQLSERVER\DML" />
+    <Folder Include="MSSQLSERVER\DDL" />
+    <Folder Include="MSSQLSERVER\DDL\01. Tablas" />
+    <Folder Include="POSTGRESQL" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="DDL\01. Tablas\tblAlumno.sql" />
-    <Build Include="DDL\01. Tablas\tblCurso.sql" />
-    <Build Include="DDL\01. Tablas\tblGradoSeccion.sql" />
-    <Build Include="DDL\01. Tablas\tblDocente.sql" />
-    <Build Include="DDL\01. Tablas\tblMatricula.sql" />
-    <Build Include="DDL\01. Tablas\tblCurso_GradoSeccion.sql" />
-    <Build Include="DDL\01. Tablas\tblCurso_Docente.sql" />
-    <PostDeploy Include="DML\Script.PostDeployment_DataRandom.sql" />
+    <None Include="MSSQLSERVER\DML\Script.PostDeployment_DataRandom.sql" />
+    <Build Include="MSSQLSERVER\DDL\01. Tablas\tblAlumno.sql" />
+    <Build Include="MSSQLSERVER\DDL\01. Tablas\tblCurso.sql" />
+    <Build Include="MSSQLSERVER\DDL\01. Tablas\tblCurso_Docente.sql" />
+    <Build Include="MSSQLSERVER\DDL\01. Tablas\tblCurso_GradoSeccion.sql" />
+    <Build Include="MSSQLSERVER\DDL\01. Tablas\tblDocente.sql" />
+    <Build Include="MSSQLSERVER\DDL\01. Tablas\tblGradoSeccion.sql" />
+    <Build Include="MSSQLSERVER\DDL\01. Tablas\tblMatricula.sql" />
+    <None Include="MSSQLSERVER\Colegio.GestionMatriculas.BaseDatos.Docker.publish.xml" />
+    <None Include="MSSQLSERVER\Colegio.GestionMatriculas.BaseDatos.publish.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Colegio.GestionMatriculas.BaseDatos.publish.xml" />
+    <Build Include="POSTGRESQL\Inserts.sql" />
+    <Build Include="POSTGRESQL\ObtenerColaborador.sql" />
+    <Build Include="POSTGRESQL\Tablas.sql" />
   </ItemGroup>
 </Project>

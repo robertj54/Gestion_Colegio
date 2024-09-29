@@ -21,6 +21,11 @@ builder.Services.AddDbContext<BdGestionColegioContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("BdColegio1"));
 });
 
+builder.Services.AddDbContext<SeguridadDbContext>(options =>
+{
+    options.UseNpgsql(builder.Configuration.GetConnectionString("BdSeguridad"));
+});
+
 
 builder.Services.AddRepositorios();
 builder.Services.AddServicios();

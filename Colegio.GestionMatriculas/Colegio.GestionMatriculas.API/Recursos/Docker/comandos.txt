@@ -1,1 +1,5 @@
 ﻿
+docker compose up -d
+
+docker compose -f docker-compose-postgresql.yml up -d
+
