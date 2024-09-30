@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Colegio.GestionMatriculas.AccesoDatos;
+using Colegio.GestionMatriculas.Entidades;
+using Colegio.GestionMatriculas.Entidades.Seguridad;
 using Microsoft.EntityFrameworkCore;
 
 namespace Colegio.GestionMatriculas.AccesoDatos.Contexto;
@@ -25,11 +27,15 @@ public partial class SeguridadDbContext : DbContext
     public virtual DbSet<Permiso> Permisos { get; set; }
 
     public virtual DbSet<Puesto> Puestos { get; set; }
+    public virtual DbSet<UsuarioColaboradorResult> UsuarioColaboradorResults { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        modelBuilder.Entity<UsuarioColaboradorResult>().HasNoKey();
+
         modelBuilder.Entity<Colaborador>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("colaborador_pkey");
