@@ -14,6 +14,7 @@ namespace Colegio.GestionMatriculas.Servicios
         {
             config.AddProfile<AlumnoPerfil>();
             config.AddProfile<CursoPerfil>();
+            config.AddProfile<UsuarioPerfil>();
             return config;
         }
     }
