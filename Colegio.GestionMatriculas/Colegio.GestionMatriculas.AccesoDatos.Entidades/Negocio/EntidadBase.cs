@@ -20,12 +20,12 @@ namespace Colegio.GestionMatriculas.Entidades
         /// <summary>
         /// Fecha creación registro
         /// </summary>
-        public DateOnly FechaCreacion { get; set; }
+        public DateTime FechaCreacion { get; set; } = DateTime.Now;
 
         /// <summary>
         /// Usuario creación registro
         /// </summary>
-        public string UsuarioCreacion { get; set; } = null!;
+        public string UsuarioCreacion { get; set; } = Environment.UserName!;
 
         /// <summary>
         /// Fecha modificación registro

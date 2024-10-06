@@ -1,7 +1,6 @@
 ﻿using Colegio.GestionMatriculas.AccesoDatos.Contexto;
 using Colegio.GestionMatriculas.Entidades;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
-using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
 {
-    public class AlumnoRepositorio : RepositorioBase<TblAlumno>, IAlumnoRepositorio
+    public class GradoSeccionRepositorio : RepositorioBase<TblGradoSeccion>, IGradoSeccionRepositorio
     {
         private BdGestionColegioContext _contexto;
 
-        public AlumnoRepositorio(BdGestionColegioContext context) : base(context)
+        public GradoSeccionRepositorio(BdGestionColegioContext context) : base(context)
         {
             _contexto = context;
         }

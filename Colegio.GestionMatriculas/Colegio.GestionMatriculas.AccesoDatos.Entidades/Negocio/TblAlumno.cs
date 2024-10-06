@@ -38,7 +38,7 @@ public partial class TblAlumno : EntidadBase
     /// <summary>
     /// Fecha nacimiento
     /// </summary>
-    public DateOnly FechaNacimiento { get; set; }
+    public DateTime FechaNacimiento { get; set; }
 
     public virtual ICollection<TblMatricula> TblMatriculas { get; set; } = new List<TblMatricula>();
 }

@@ -32,6 +32,19 @@ namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
             return await Contexto.Set<TEntity>().FindAsync(id);
         }
 
+        public async Task<TInfo> FindOneAsync<TInfo>(
+            Expression<Func<TEntity, bool>> predicado,
+            Expression<Func<TEntity, TInfo>> selector)
+        {
+            var resultado = await Contexto.Set<TEntity>()
+                .Where(predicado)
+                .AsNoTracking()
+                .Select(selector)
+                .FirstOrDefaultAsync();
+
+            return resultado;
+        }
+
         public async Task<ICollection<TEntity>> ListAsync()
         {
             return await Contexto.Set<TEntity>()

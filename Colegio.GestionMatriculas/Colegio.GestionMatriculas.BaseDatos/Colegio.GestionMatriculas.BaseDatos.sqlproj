@@ -73,10 +73,11 @@
     <Build Include="MSSQLSERVER\DDL\01. Tablas\tblMatricula.sql" />
     <None Include="MSSQLSERVER\Colegio.GestionMatriculas.BaseDatos.Docker.publish.xml" />
     <None Include="MSSQLSERVER\Colegio.GestionMatriculas.BaseDatos.publish.xml" />
+    <None Include="Colegio.GestionMatriculas.BaseDatos.publish.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="POSTGRESQL\Inserts.sql" />
-    <Build Include="POSTGRESQL\ObtenerColaborador.sql" />
-    <Build Include="POSTGRESQL\Tablas.sql" />
+    <None Include="POSTGRESQL\Inserts.sql" />
+    <None Include="POSTGRESQL\ObtenerColaborador.sql" />
+    <None Include="POSTGRESQL\Tablas.sql" />
   </ItemGroup>
 </Project>

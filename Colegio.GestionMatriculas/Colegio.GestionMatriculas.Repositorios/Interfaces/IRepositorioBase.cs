@@ -26,6 +26,9 @@ namespace Colegio.GestionMatriculas.Repositorios.Interfaces
             int pagina = 1, int filas = 5);
 
         Task<TEntity?> FindByIdAsync(int id);
+        Task<TInfo> FindOneAsync<TInfo>(
+    Expression<Func<TEntity, bool>> predicado,
+    Expression<Func<TEntity, TInfo>> selector);
 
         Task<TEntity> AddAsync(TEntity entity);
     }
