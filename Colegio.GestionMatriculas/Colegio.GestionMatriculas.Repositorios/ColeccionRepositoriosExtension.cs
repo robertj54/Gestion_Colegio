@@ -17,6 +17,7 @@ namespace Colegio.GestionMatriculas.Repositorios
             services.AddScoped<ICursoRepositorio, CursoRepositorio>();
             services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
             services.AddScoped<IGradoSeccionRepositorio, GradoSeccionRepositorio>();
+            services.AddScoped<IDocenteRepositorio, DocenteRepositorio>();
             return services;
         }
 

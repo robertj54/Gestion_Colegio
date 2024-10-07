@@ -27,6 +27,16 @@ namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
             return resultado.Entity;
         }
 
+        public async Task<bool> DeleteByIdAsync(int id)
+        {
+            var resultado = await Contexto.Set<TEntity>()
+                            .Where(t => t.Id == id)
+                            .AsNoTracking()
+                            .ExecuteUpdateAsync(t => t.SetProperty(e => e.Estado, e => false));
+
+            return resultado > 0 ? true : false;
+        }
+
         public async Task<TEntity?> FindByIdAsync(int id)
         {
             return await Contexto.Set<TEntity>().FindAsync(id);
@@ -74,23 +84,31 @@ namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
 
         public async Task<(ICollection<TInfo> Collection, int TotalRegistros)> ListAsync<TInfo, TKey>(Expression<Func<TEntity, bool>> predicado, Expression<Func<TEntity, TInfo>> selector, Expression<Func<TEntity, TKey>> orderBy, int pagina = 1, int filas = 5)
         {
+            try
+            {
 
-            var resultado = await Contexto.Set<TEntity>()
-                .Where(predicado)
-                .AsNoTracking()
-                .OrderBy(orderBy)
-                .Skip((pagina - 1) * filas)
-                .Take(filas)
-                .Select(selector)
-                .ToListAsync();
+                var resultado = await Contexto.Set<TEntity>()
+                    .Where(predicado)
+                    .AsNoTracking()
+                    .OrderBy(orderBy)
+                    .Skip((pagina - 1) * filas)
+                    .Take(filas)
+                    .Select(selector)
+                    .ToListAsync();
 
-            var total = await Contexto.Set<TEntity>()
-                .Where(predicado)
-                .CountAsync();
+                var total = await Contexto.Set<TEntity>()
+                    .Where(predicado)
+                    .CountAsync();
 
-            //var total = resultado.Count();
+                //var total = resultado.Count();
 
-            return (resultado, total);
+                return (resultado, total);
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }

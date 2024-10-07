@@ -1,44 +1,55 @@
 ﻿using Colegio.GestionMatriculas.Comun;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Colegio.GestionMatriculas.Dto.Request.Alumno
+namespace Colegio.GestionMatriculas.Dto.Request.Docente
 {
-    public class AlumnoDtoRequest : DtoRequestBase
+    public class DocenteDtoRequest:DtoRequestBase
     {
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>
-        /// DNI alumno
+        /// nro de dni docente
         /// </summary>
         public string Dni { get; set; } = null!;
 
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>
-        /// Nombres alumno
+        /// nombres del docente
         /// </summary>
         public string Nombres { get; set; } = null!;
 
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>
-        /// Apellido paterno
+        /// Apellido paterno del docente
         /// </summary>
         public string ApellidoPaterno { get; set; } = null!;
 
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>
-        /// Apellido materno
+        /// Apellido materno del docente
         /// </summary>
         public string ApellidoMaterno { get; set; } = null!;
 
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>
-        /// Genero alumno
+        /// Fecha de nacimiento del docente
+        /// </summary>
+        public DateTime FechaNacimiento { get; set; }
+
+        [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
+        /// <summary>
+        /// Genero del docente -F:Femenino / M:Masculino
         /// </summary>
         public string Genero { get; set; } = null!;
 
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>
-        /// Fecha nacimiento
+        /// Especialidad del docente
         /// </summary>
-        public DateTime FechaNacimiento { get; set; }
+        public string Especialidad { get; set; } = null!;
     }
 }

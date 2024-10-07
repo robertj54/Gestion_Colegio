@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using Colegio.GestionMatriculas.Comun;
 using Colegio.GestionMatriculas.Dto.Request;
-using Colegio.GestionMatriculas.Dto.Request.Curso;
+using Colegio.GestionMatriculas.Dto.Request.Docente;
 using Colegio.GestionMatriculas.Dto.Response;
-using Colegio.GestionMatriculas.Dto.Response.Alumno;
-using Colegio.GestionMatriculas.Dto.Response.Curso;
+using Colegio.GestionMatriculas.Dto.Response.Docente;
+using Colegio.GestionMatriculas.Dto.Response.GradoSeccion;
 using Colegio.GestionMatriculas.Entidades;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
@@ -16,12 +16,12 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Servicios.Implementaciones
 {
-    public class CursoServicio : ICursoServicio
+    public class DocenteServicio : IDocenteServicio
     {
-        private ICursoRepositorio _repositorio;
+        private IDocenteRepositorio _repositorio;
         private IMapper _mapper;
 
-        public CursoServicio(ICursoRepositorio repositorio, IMapper mapper)
+        public DocenteServicio(IDocenteRepositorio repositorio, IMapper mapper)
         {
             _repositorio = repositorio;
             _mapper = mapper;
@@ -32,15 +32,15 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
             throw new NotImplementedException();
         }
 
-        public async Task<RespuestaPaginacionDto<CursoDtoResponse>> Listar(PaginacionDtoRequest request)
+        public async Task<RespuestaPaginacionDto<DocenteDtoResponse>> Listar(PaginacionDtoRequest request)
         {
-            RespuestaPaginacionDto<CursoDtoResponse> respuesta = new();
+            RespuestaPaginacionDto<DocenteDtoResponse> respuesta = new();
             try
             {
                 var resultado = await _repositorio.ListAsync(
                     predicado: p => p.Estado == true,
 
-                    selector: p => _mapper.Map<CursoDtoResponse>(p),
+                    selector: p => _mapper.Map<DocenteDtoResponse>(p),
                     orderBy: p => p.Id,
                     pagina: request.NumeroPagina,
                     filas: request.TotalFilas);
@@ -56,14 +56,14 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
             }
         }
 
-        public async Task<RespuestaBaseDto<CursoDtoResponse>> Registrar(CursoDtoRequest request)
+        public async Task<RespuestaBaseDto<DocenteDtoResponse>> Registrar(DocenteDtoRequest request)
         {
-            RespuestaBaseDto<CursoDtoResponse> respuesta = new();
+            RespuestaBaseDto<DocenteDtoResponse> respuesta = new();
             try
             {
-                var curso = _mapper.Map<TblCurso>(request);
+                var curso = _mapper.Map<TblDocente>(request);
                 var nuevo = await _repositorio.AddAsync(curso);
-                respuesta.Data = _mapper.Map<CursoDtoResponse>(nuevo);
+                respuesta.Data = _mapper.Map<DocenteDtoResponse>(nuevo);
                 respuesta.success = true;
                 respuesta.message = "Curso registrado exitosamente";
                 return respuesta;

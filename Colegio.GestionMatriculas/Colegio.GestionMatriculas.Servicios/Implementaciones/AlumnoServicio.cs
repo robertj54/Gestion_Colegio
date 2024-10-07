@@ -26,6 +26,11 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
             _mapper = mapper;
         }
 
+        public async Task<bool> EliminarPorId(int id)
+        {
+            return await _repositorio.DeleteByIdAsync(id);
+        }
+
         public async Task<RespuestaPaginacionDto<AlumnoDtoResponse>> Listar(PaginacionDtoRequest request)
         {
             RespuestaPaginacionDto<AlumnoDtoResponse> respuesta = new();
@@ -99,6 +104,11 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
 
                 throw;
             }
+        }
+
+        public Task<RespuestaBaseDto<AlumnoDtoResponse>> Registrar(DtoResponseBase request)
+        {
+            throw new NotImplementedException();
         }
     }
 }

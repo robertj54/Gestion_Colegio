@@ -18,6 +18,7 @@ namespace Colegio.GestionMatriculas.Servicios
             services.AddScoped<IAlumnoServicio, AlumnoServicio>();
             services.AddScoped<ICursoServicio, CursoServicio>();
             services.AddScoped<IGradoSeccionServicio, GradoSeccionServicio>();
+            services.AddScoped<IDocenteServicio, DocenteServicio>();
 
             services.AddScoped<IUsuarioServicio, UsuarioServicio>();
             return services;

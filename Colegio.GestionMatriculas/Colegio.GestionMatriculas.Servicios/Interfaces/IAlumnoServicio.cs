@@ -10,10 +10,11 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Servicios.Interfaces
 {
-    public interface IAlumnoServicio
+    public interface IAlumnoServicio: IServicioBase<AlumnoDtoResponse>
     {
         Task<RespuestaBaseDto<AlumnoDtoResponse>> Registrar(AlumnoDtoRequest request);
         Task<RespuestaPaginacionDto<AlumnoDtoResponse>> Listar(PaginacionDtoRequest request);
         Task<RespuestaBaseDto<AlumnoDtoResponse>> ObtenerPorDNI(string dni);
+        //Task<bool> EliminarPorId(int id);
     }
 }

@@ -40,5 +40,12 @@ namespace Colegio.GestionMatriculas.API.Controllers
             return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
 
+        [HttpDelete]
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            var resultado = await _servicio.EliminarPorId(id);
+            return resultado ? Ok(resultado) : BadRequest(resultado);
+        }
+
     }
 }

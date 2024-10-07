@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Dto.Request.GradoSecion
 {
-    public class GradoSeccionDtoRequest
+    public class GradoSeccionDtoRequest : DtoRequestBase
     {
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>

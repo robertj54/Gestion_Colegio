@@ -31,5 +31,6 @@ namespace Colegio.GestionMatriculas.Repositorios.Interfaces
     Expression<Func<TEntity, TInfo>> selector);
 
         Task<TEntity> AddAsync(TEntity entity);
+        Task<bool> DeleteByIdAsync(int id);
     }
 }

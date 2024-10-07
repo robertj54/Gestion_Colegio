@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Dto.Request.Curso
 {
-    public  class CursoDtoRequest
+    public  class CursoDtoRequest : DtoRequestBase
     {
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Dto.Response.Curso
 {
-    public class CursoDtoResponse
+    public class CursoDtoResponse:DtoResponseBase
     {
         /// <summary>
         /// Id del curso

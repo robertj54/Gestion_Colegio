@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Dto.Response.GradoSeccion
 {
-    public class GradoSeccionDtoResponse
+    public class GradoSeccionDtoResponse : DtoResponseBase
     {
         /// <summary>
         /// Id del grado seccion

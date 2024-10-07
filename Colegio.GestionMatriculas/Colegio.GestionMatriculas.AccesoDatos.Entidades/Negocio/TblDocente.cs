@@ -33,7 +33,7 @@ public partial class TblDocente : EntidadBase
     /// <summary>
     /// Fecha de nacimiento del docente
     /// </summary>
-    public DateOnly FechaNacimiento { get; set; }
+    public DateTime FechaNacimiento { get; set; }
 
     /// <summary>
     /// Genero del docente -F:Femenino / M:Masculino

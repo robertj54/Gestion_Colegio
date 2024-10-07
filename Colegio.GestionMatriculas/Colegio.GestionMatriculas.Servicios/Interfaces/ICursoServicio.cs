@@ -14,5 +14,6 @@ namespace Colegio.GestionMatriculas.Servicios.Interfaces
     {
         Task<RespuestaBaseDto<CursoDtoResponse>> Registrar(CursoDtoRequest request);
         Task<RespuestaPaginacionDto<CursoDtoResponse>> Listar(PaginacionDtoRequest request);
+        Task<RespuestaBaseDto<bool>> EliminarPorId(string id);
     }
 }
