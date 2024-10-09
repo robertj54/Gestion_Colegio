@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Dto.Request
 {
-    public class DtoRequestBase
+    public class DtoRequestBase : DtoBase
     {
     }
 }

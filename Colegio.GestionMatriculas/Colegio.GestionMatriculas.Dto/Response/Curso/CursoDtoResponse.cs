@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Colegio.GestionMatriculas.Dto.Response.Curso
+﻿namespace Colegio.GestionMatriculas.Dto.Response.Curso
 {
-    public class CursoDtoResponse:DtoResponseBase
+    public class CursoDtoResponse : DtoResponseBase
     {
         /// <summary>
         /// Id del curso

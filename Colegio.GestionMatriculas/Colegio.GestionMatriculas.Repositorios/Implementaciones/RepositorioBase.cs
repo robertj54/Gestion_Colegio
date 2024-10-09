@@ -2,13 +2,7 @@
 using Colegio.GestionMatriculas.Entidades;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
 {

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Colegio.GestionMatriculas.Entidades;
+﻿namespace Colegio.GestionMatriculas.Entidades;
 
 public partial class Colaborador
 {

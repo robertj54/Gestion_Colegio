@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Colegio.GestionMatriculas.Entidades;
+﻿using Colegio.GestionMatriculas.Entidades;
 using Microsoft.EntityFrameworkCore;
 
 namespace Colegio.GestionMatriculas.AccesoDatos.Contexto;

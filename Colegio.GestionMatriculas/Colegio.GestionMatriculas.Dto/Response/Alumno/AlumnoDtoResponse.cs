@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Colegio.GestionMatriculas.Dto.Response.Alumno
+﻿namespace Colegio.GestionMatriculas.Dto.Response.Alumno
 {
-    public class AlumnoDtoResponse: DtoResponseBase
+    public class AlumnoDtoResponse : DtoResponseBase
     {
         /// <summary>
         /// Id Alumno
@@ -45,7 +39,8 @@ namespace Colegio.GestionMatriculas.Dto.Response.Alumno
 
         public int Edad
         {
-            get {
+            get
+            {
                 return DateTime.Now.Year - FechaNacimiento.Year;
             }
         }

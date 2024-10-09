@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Dto.Response
 {
-    public class DtoResponseBase
+    public class DtoResponseBase : DtoBase
     {
     }
 }

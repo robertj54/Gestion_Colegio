@@ -3,17 +3,10 @@ using Colegio.GestionMatriculas.Comun;
 using Colegio.GestionMatriculas.Dto.Request;
 using Colegio.GestionMatriculas.Dto.Request.GradoSecion;
 using Colegio.GestionMatriculas.Dto.Response;
-using Colegio.GestionMatriculas.Dto.Response.Curso;
 using Colegio.GestionMatriculas.Dto.Response.GradoSeccion;
 using Colegio.GestionMatriculas.Entidades;
-using Colegio.GestionMatriculas.Repositorios.Implementaciones;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Servicios.Implementaciones
 {
@@ -27,6 +20,24 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
             _repositorio = repositorio;
             _mapper = mapper;
         }
+
+        public async Task<RespuestaBaseDto> EliminarPorId(int id)
+        {
+            RespuestaBaseDto respuesta = new();
+            try
+            {
+                var nuevo = await _repositorio.DeleteByIdAsync(id);
+                respuesta.success = true;
+                respuesta.message = "Registro de grado y seccion eliminado exitosamente";
+                return respuesta;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         public async Task<RespuestaPaginacionDto<GradoSeccionDtoResponse>> Listar(PaginacionDtoRequest request)
         {
             RespuestaPaginacionDto<GradoSeccionDtoResponse> respuesta = new();

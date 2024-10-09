@@ -1,9 +1,6 @@
-﻿using Azure.Core;
-using Colegio.GestionMatriculas.AccesoDatos.Contexto;
-using Colegio.GestionMatriculas.Dto.Request;
+﻿using Colegio.GestionMatriculas.Dto.Request;
 using Colegio.GestionMatriculas.Dto.Request.Alumno;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Colegio.GestionMatriculas.API.Controllers
@@ -44,7 +41,7 @@ namespace Colegio.GestionMatriculas.API.Controllers
         public async Task<IActionResult> Eliminar(int id)
         {
             var resultado = await _servicio.EliminarPorId(id);
-            return resultado ? Ok(resultado) : BadRequest(resultado);
+            return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
 
     }

@@ -1,14 +1,9 @@
 ﻿using Colegio.GestionMatriculas.Comun;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Dto.Request.Docente
 {
-    public class DocenteDtoRequest:DtoRequestBase
+    public class DocenteDtoRequest : DtoRequestBase
     {
         [Required(ErrorMessage = Constantes.Mensaje_Requerido)]
         /// <summary>

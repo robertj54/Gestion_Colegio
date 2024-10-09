@@ -1,8 +1,6 @@
 ﻿using Colegio.GestionMatriculas.Dto.Request.Usuario;
-using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Colegio.GestionMatriculas.API.Controllers

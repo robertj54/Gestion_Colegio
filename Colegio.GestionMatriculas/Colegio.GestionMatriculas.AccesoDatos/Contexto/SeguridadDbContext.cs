@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Colegio.GestionMatriculas.AccesoDatos;
-using Colegio.GestionMatriculas.Entidades;
+﻿using Colegio.GestionMatriculas.Entidades;
 using Colegio.GestionMatriculas.Entidades.Seguridad;
 using Microsoft.EntityFrameworkCore;
 

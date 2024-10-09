@@ -1,12 +1,7 @@
 ﻿using Colegio.GestionMatriculas.AccesoDatos.Contexto;
-using Colegio.GestionMatriculas.Entidades.Seguridad.Resultados;
 using Colegio.GestionMatriculas.Entidades.Seguridad;
+using Colegio.GestionMatriculas.Entidades.Seguridad.Resultados;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 namespace Colegio.GestionMatriculas.Repositorios.Implementaciones

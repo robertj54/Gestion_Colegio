@@ -1,8 +1,6 @@
 ﻿using Colegio.GestionMatriculas.Dto.Request;
 using Colegio.GestionMatriculas.Dto.Request.Docente;
-using Colegio.GestionMatriculas.Dto.Request.GradoSecion;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Colegio.GestionMatriculas.API.Controllers
@@ -29,6 +27,13 @@ namespace Colegio.GestionMatriculas.API.Controllers
         public async Task<IActionResult> Post(DocenteDtoRequest request)
         {
             var resultado = await _servicio.Registrar(request);
+            return resultado.success ? Ok(resultado) : BadRequest(resultado);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Eliminar(int id)
+        {
+            var resultado = await _servicio.EliminarPorId(id);
             return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
     }

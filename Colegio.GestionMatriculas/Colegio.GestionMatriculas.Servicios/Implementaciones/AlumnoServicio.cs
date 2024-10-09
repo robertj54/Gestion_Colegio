@@ -7,11 +7,6 @@ using Colegio.GestionMatriculas.Dto.Response.Alumno;
 using Colegio.GestionMatriculas.Entidades;
 using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Colegio.GestionMatriculas.Servicios.Implementaciones
 {
@@ -26,10 +21,7 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
             _mapper = mapper;
         }
 
-        public async Task<bool> EliminarPorId(int id)
-        {
-            return await _repositorio.DeleteByIdAsync(id);
-        }
+
 
         public async Task<RespuestaPaginacionDto<AlumnoDtoResponse>> Listar(PaginacionDtoRequest request)
         {
@@ -68,7 +60,7 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
         public async Task<RespuestaBaseDto<AlumnoDtoResponse>> ObtenerPorDNI(string dni)
         {
             RespuestaBaseDto<AlumnoDtoResponse> respuesta = new RespuestaBaseDto<AlumnoDtoResponse>();
-            
+
             try
             {
                 var resultado = await _repositorio.ListAsync(
@@ -76,8 +68,8 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
                     selector: p => _mapper.Map<AlumnoDtoResponse>(p)
                     );
                 respuesta.Data = resultado.FirstOrDefault();
-                respuesta.success = true;
-                respuesta.message = "Alumno encontrado";
+                respuesta.success = respuesta.Data != null ? true:false;
+                respuesta.message = respuesta.success ? "Alumno encontrado" : "Alumno no encontrado";
             }
             catch (Exception)
             {
@@ -106,9 +98,21 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
             }
         }
 
-        public Task<RespuestaBaseDto<AlumnoDtoResponse>> Registrar(DtoResponseBase request)
+        public async Task<RespuestaBaseDto> EliminarPorId(int id)
         {
-            throw new NotImplementedException();
+            RespuestaBaseDto respuesta = new();
+            try
+            {
+                var nuevo = await _repositorio.DeleteByIdAsync(id);
+                respuesta.success = true;
+                respuesta.message = "Registro de alumno eliminado exitosamente";
+                return respuesta;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -1,10 +1,6 @@
 using Colegio.GestionMatriculas.AccesoDatos.Contexto;
 using Colegio.GestionMatriculas.Repositorios;
-using Colegio.GestionMatriculas.Repositorios.Implementaciones;
-using Colegio.GestionMatriculas.Repositorios.Interfaces;
 using Colegio.GestionMatriculas.Servicios;
-using Colegio.GestionMatriculas.Servicios.Implementaciones;
-using Colegio.GestionMatriculas.Servicios.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;

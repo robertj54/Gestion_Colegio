@@ -1,14 +1,8 @@
-﻿using Colegio.GestionMatriculas.AccesoDatos.Contexto;
-using Colegio.GestionMatriculas.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Colegio.GestionMatriculas.Entidades;
 
 namespace Colegio.GestionMatriculas.Repositorios.Interfaces
 {
-    public interface IAlumnoRepositorio:IRepositorioBase<TblAlumno>
+    public interface IAlumnoRepositorio : IRepositorioBase<TblAlumno>
     {
     }
 }
