@@ -27,8 +27,8 @@ namespace Colegio.GestionMatriculas.Servicios.Implementaciones
             try
             {
                 var nuevo = await _repositorio.DeleteByIdAsync(id);
-                respuesta.success = true;
-                respuesta.message = "Registro de docente eliminado exitosamente";
+                respuesta.success = nuevo;
+                respuesta.message = nuevo ? "Registro de docente eliminado exitosamente" : "Docente no encontrado";
                 return respuesta;
             }
             catch (Exception)

@@ -24,7 +24,7 @@ namespace Colegio.GestionMatriculas.Repositorios.Implementaciones
         public async Task<bool> DeleteByIdAsync(int id)
         {
             var resultado = await Contexto.Set<TEntity>()
-                            .Where(t => t.Id == id)
+                            .Where(t => t.Id == id && t.Estado)
                             .AsNoTracking()
                             .ExecuteUpdateAsync(t => t.SetProperty(e => e.Estado, e => false));
 

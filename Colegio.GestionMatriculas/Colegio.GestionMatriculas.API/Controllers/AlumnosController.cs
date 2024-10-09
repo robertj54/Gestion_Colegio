@@ -1,6 +1,7 @@
 ﻿using Colegio.GestionMatriculas.Dto.Request;
 using Colegio.GestionMatriculas.Dto.Request.Alumno;
 using Colegio.GestionMatriculas.Servicios.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Colegio.GestionMatriculas.API.Controllers
@@ -16,6 +17,7 @@ namespace Colegio.GestionMatriculas.API.Controllers
             _servicio = servicio;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> Get([FromQuery] PaginacionDtoRequest request)
         {
@@ -23,6 +25,7 @@ namespace Colegio.GestionMatriculas.API.Controllers
             return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
 
+        [Authorize]
         [HttpGet("GetByDNI/{dni:int}")]
         public async Task<IActionResult> Get(string dni)
         {
@@ -30,6 +33,7 @@ namespace Colegio.GestionMatriculas.API.Controllers
             return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
 
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> Post(AlumnoDtoRequest request)
         {
@@ -37,6 +41,7 @@ namespace Colegio.GestionMatriculas.API.Controllers
             return resultado.success ? Ok(resultado) : BadRequest(resultado);
         }
 
+        [Authorize]
         [HttpDelete]
         public async Task<IActionResult> Eliminar(int id)
         {
